@@ -10,13 +10,13 @@ You only have to do this once.
 
 ## 1. Create the Sheet
 
-1. Create a new Google Sheet — name it e.g. **Didda Waitlist**.
+1. Create a new Google Sheet — name it e.g. **Diddar Waitlist**.
 2. Add two tabs (bottom-left): rename `Sheet1` to **Waitlist**, add a second
    tab named **Newsletter**.
-3. On **Waitlist**, put these headers in row 1 (A1:M1):
+3. On **Waitlist**, put these headers in row 1 (A1:L1):
 
    ```
-   timestamp | kind | name | email | tracks | level | mode | timezone | goal | wantsToTeach | hearAbout | source | referrerName
+   timestamp | kind | name | email | track | level | mode | timezone | goal | hearAbout | source | referrerName
    ```
 
    `referrerName` is the person a signup names when they pick **A friend or
@@ -57,12 +57,11 @@ You only have to do this once.
            body.kind || 'waitlist',
            body.name || '',
            body.email || '',
-           body.tracks || '',
+           body.track || '',
            body.level || '',
            body.mode || '',
            body.timezone || '',
            body.goal || '',
-           body.wantsToTeach || 'no',
            body.hearAbout || '',
            body.source || 'website',
            body.referrerName || '',
@@ -86,7 +85,7 @@ You only have to do this once.
 
 1. **Deploy → New deployment**.
 2. Type: **Web app**.
-3. Description: `Didda waitlist intake`.
+3. Description: `Diddar waitlist intake`.
 4. Execute as: **Me**.
 5. Who has access: **Anyone**.
 6. **Deploy**, authorise when prompted, and copy the **Web app URL**
@@ -124,9 +123,8 @@ edit (pencil) → Version: New version → Deploy**. The URL stays the same.
 
 On the **Waitlist** tab:
 
-- Select the `tracks` and `level` columns → **Insert → Pivot table** to see
+- Select the `track` and `level` columns → **Insert → Pivot table** to see
   counts per track and per level.
-- Filter `wantsToTeach = yes` to get your trainer-outreach shortlist.
 - Select the `referrerName` column → **Insert → Pivot table**, group by
   `referrerName` with a COUNTA value, to see how many signups each partner or
   individual referred.

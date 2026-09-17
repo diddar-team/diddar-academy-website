@@ -14,6 +14,11 @@ const ITEMS = [
     desc: 'You learn by building things that actually run.',
   },
   {
+    icon: '🤖',
+    title: 'AI tools, built in',
+    desc: 'Every track teaches the AI tools people use on the job — not just the stack on its own.',
+  },
+  {
     icon: '👥',
     title: 'A small cohort',
     desc: 'Small enough that nobody gets lost.',

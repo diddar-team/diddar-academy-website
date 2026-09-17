@@ -13,7 +13,11 @@ const FAQS = [
   },
   {
     q: 'Which tracks can I pick?',
-    a: 'Frontend, Product Design (Figma), Backend, Fullstack Development, AI for Developers, Mobile Development, Data & Analytics, and Project Management. The list decides which run first — a track nobody picks does not open.',
+    a: 'Frontend, Product Design, Backend, Fullstack Development, Mobile Development, Data & Analytics and Project Management — all taught with AI tools built in — plus AI for Developers, for people who want to build the AI features themselves. The list decides which run first — a track nobody picks does not open.',
+  },
+  {
+    q: 'How is AI part of the training?',
+    a: 'Every track pairs the fundamentals with the AI tools people actually use on the job — coding assistants, design copilots, AI-assisted analysis — so you learn to move fast with AI without skipping the skills underneath it. AI for Developers goes further: it teaches you to build AI-powered features, not just use AI tools.',
   },
   {
     q: 'Do I need experience?',

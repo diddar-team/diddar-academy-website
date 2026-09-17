@@ -50,7 +50,7 @@ export function SiteHeader() {
         )}
       >
         <div className="mx-auto flex h-[68px] w-full max-w-[1120px] items-center justify-between gap-6 px-5 sm:px-8">
-          <BrandLockup />
+          <BrandLockup showMark={false} priority />
 
           <nav
             aria-label="Main navigation"
@@ -91,7 +91,7 @@ export function SiteHeader() {
           position="right"
           size="80%"
           withCloseButton
-          title={<BrandLockup />}
+          title={<BrandLockup showMark={false} />}
           classNames={{ content: 'bg-background', header: 'bg-background' }}
         >
           <nav className="flex flex-col gap-1">

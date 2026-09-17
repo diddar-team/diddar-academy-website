@@ -27,7 +27,7 @@ const caveat = Caveat({
 });
 
 const TITLE = `${APP_NAME} — ${APP_TAGLINE}`;
-const SOCIAL_DESCRIPTION = `A practical, mentor-led tech bootcamp shaped around real demand. Add your name to the list.`;
+const SOCIAL_DESCRIPTION = `An AI-first, mentor-led tech bootcamp. Build faster with AI, backed by real mentors and real projects.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,8 +37,10 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   keywords: [
+    'AI-first bootcamp',
+    'AI training',
     'tech bootcamp',
-    'learn to code',
+    'learn to code with AI',
     'frontend',
     'backend',
     'software training',
