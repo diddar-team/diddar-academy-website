@@ -120,7 +120,7 @@ export function PricingBreakdown({ className }: { className?: string }) {
               }
             />
             <Row
-              label="Training — one-time payment"
+              label="Training"
               standard={data.training.standard}
               payable={data.training.payable}
               symbol={data.symbol}
@@ -146,6 +146,14 @@ export function PricingBreakdown({ className }: { className?: string }) {
             Nothing is charged now. Payment only happens once you are offered —
             and accept — a place in a cohort. {data.earlyReserver.note}
           </p>
+
+          {data.installment.available && (
+            <p className="mt-2 font-sans text-[0.8rem] leading-relaxed text-muted">
+              Prefer to split it? Pay {data.installment.upfrontPercent}% upfront
+              and the remaining {100 - data.installment.upfrontPercent}% as a
+              balance in the course of training.
+            </p>
+          )}
         </>
       )}
     </div>

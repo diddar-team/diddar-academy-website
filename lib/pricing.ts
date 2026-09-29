@@ -15,6 +15,10 @@ export type PricingResponse = {
     label: string;
     note: string;
   };
+  installment: {
+    available: boolean;
+    upfrontPercent: number;
+  };
 };
 
 export const PRICING_CONFIG: PricingResponse = {
@@ -34,6 +38,10 @@ export const PRICING_CONFIG: PricingResponse = {
     label: 'Early-reserver scholarship',
     note: 'Locked in for everyone who adds their name before the first cohort opens.',
   },
+  installment: {
+    available: true,
+    upfrontPercent: 70,
+  },
 };
 
 export type ComputedLine = {
@@ -52,6 +60,7 @@ export type ComputedPricing = {
   allInStandard: number;
   totalSaved: number;
   earlyReserver: PricingResponse['earlyReserver'];
+  installment: PricingResponse['installment'];
 };
 
 function line(standard: number, discountPercent: number): ComputedLine {
@@ -96,6 +105,7 @@ export function computePricing(p: PricingResponse): ComputedPricing {
     allInStandard: registration.standard + training.standard,
     totalSaved: registration.saved + training.saved,
     earlyReserver: p.earlyReserver,
+    installment: p.installment,
   };
 }
 
