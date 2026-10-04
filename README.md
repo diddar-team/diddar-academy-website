@@ -36,7 +36,7 @@ app/
   layout.tsx               fonts, metadata, providers
 components/
   home/*                   home page sections
-  ui/*                     shared primitives (Section, Button, Carousel, CardGrid…)
+  ui/*                     shared primitives (Section, ButtonLink, Carousel, CardGrid…)
   waitlist/*               the waitlist form
   pricing/*                the scholarship / pricing breakdown
 lib/

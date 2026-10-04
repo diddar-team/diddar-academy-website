@@ -1,4 +1,4 @@
-export type PricingResponse = {
+type PricingResponse = {
   currency: string;
   symbol: string;
   registration: {
@@ -44,7 +44,7 @@ export const PRICING_CONFIG: PricingResponse = {
   },
 };
 
-export type ComputedLine = {
+type ComputedLine = {
   standard: number;
   payable: number;
   saved: number;

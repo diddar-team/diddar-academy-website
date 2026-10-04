@@ -39,4 +39,3 @@ function TechCard({ tech }: { tech: Tech }) {
 }
 
 export { TECH, TechCard };
-export type { Tech };

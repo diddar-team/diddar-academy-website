@@ -1,4 +1,4 @@
-export type LevelId = 'beginner' | 'intermediate';
+type LevelId = 'beginner' | 'intermediate';
 
 export const LEVELS: { id: LevelId; label: string; hint: string }[] = [
   {
@@ -22,7 +22,6 @@ export type Track = {
   blurb: string;
   levels: LevelId[];
   stack: string[];
-  outcomes: string[];
 };
 
 export const TRACKS: Track[] = [
@@ -42,15 +41,6 @@ export const TRACKS: Track[] = [
       'TypeScript',
       'AI coding tools',
     ],
-    outcomes: [
-      'Build responsive, accessible pages with HTML and CSS',
-      'Work confidently with modern JavaScript',
-      'Build apps with React, Next.js and TypeScript',
-      'Consume APIs and handle loading and error states',
-      'Collaborate with Git, pull requests and code review',
-      'Use AI coding tools to scaffold, debug and ship faster — and know when not to trust them',
-      'Ship a portfolio-ready project you can talk through',
-    ],
   },
   {
     slug: 'product-design',
@@ -67,15 +57,6 @@ export const TRACKS: Track[] = [
       'Design systems',
       'Handoff',
       'AI design tools',
-    ],
-    outcomes: [
-      'Work fluently in Figma — frames, layout, styles',
-      'Build reusable components with Auto Layout and variants',
-      'Turn a brief into wireframes and a polished UI',
-      'Prototype and test flows before a line of code',
-      'Use AI tools to generate first drafts, copy and imagery fast',
-      'Maintain a small design system',
-      'Hand off designs developers can build from',
     ],
   },
   {
@@ -94,15 +75,6 @@ export const TRACKS: Track[] = [
       'Databases',
       'AI coding tools',
     ],
-    outcomes: [
-      'Build documented REST APIs with FastAPI and NestJS',
-      'Model data and write efficient database queries',
-      'Add authentication and authorization safely',
-      'Handle background jobs, queues and caching',
-      'Instrument, log and debug a running service',
-      'Use AI tools to scaffold endpoints, write tests and speed up debugging',
-      'Deploy a backend and keep it healthy',
-    ],
   },
   {
     slug: 'fullstack',
@@ -120,15 +92,6 @@ export const TRACKS: Track[] = [
       'Deployment',
       'AI coding tools',
     ],
-    outcomes: [
-      'Take a product idea from sketch to deployed app',
-      'Build the frontend and the backend that feeds it',
-      'Set up a database and connect it end to end',
-      'Handle accounts, sessions and protected routes',
-      'Use AI tools across the stack to build and ship faster',
-      'Deploy, monitor and iterate on a live product',
-      'Leave with one real product in your portfolio',
-    ],
   },
   {
     slug: 'ai-for-developers',
@@ -144,14 +107,6 @@ export const TRACKS: Track[] = [
       'Embeddings',
       'Agents',
       'Evaluation',
-    ],
-    outcomes: [
-      'Call LLM APIs and stream responses inside an app',
-      'Design and test prompts that hold up in production',
-      'Build retrieval-augmented (RAG) features over your own data',
-      'Use embeddings for search and similarity',
-      'Compose simple tool-using agents',
-      'Evaluate accuracy, cost and latency of what you ship',
     ],
   },
   {
@@ -170,15 +125,6 @@ export const TRACKS: Track[] = [
       'Release',
       'AI coding tools',
     ],
-    outcomes: [
-      'Build and run a cross-platform app on real devices',
-      'Design mobile navigation and screen flows',
-      'Use device capabilities: camera, location, notifications',
-      'Handle offline state and local persistence',
-      'Use AI coding tools to move faster across screens and platforms',
-      'Prepare a build for the app stores',
-      'Ship a mobile app to your portfolio',
-    ],
   },
   {
     slug: 'data-analytics',
@@ -196,15 +142,6 @@ export const TRACKS: Track[] = [
       'Statistics',
       'AI analysis tools',
     ],
-    outcomes: [
-      'Query and join data confidently with SQL',
-      'Clean and shape messy datasets in Python',
-      'Explore data and spot what actually matters',
-      'Use AI tools to speed up exploration, queries and summaries',
-      'Build dashboards people will actually use',
-      'Communicate findings to non-technical teams',
-      'Deliver an end-to-end analysis project',
-    ],
   },
   {
     slug: 'project-management',
@@ -221,15 +158,6 @@ export const TRACKS: Track[] = [
       'Roadmaps',
       'Jira',
       'AI PM tools',
-    ],
-    outcomes: [
-      'Run a project with Agile, Scrum or Kanban',
-      'Break work into a backlog and plan sprints',
-      'Build realistic timelines and track progress',
-      'Spot risks and unblock the team early',
-      'Use AI tools to draft updates, summaries and reports faster',
-      'Keep stakeholders aligned with clear updates',
-      'Run standups, reviews and retrospectives',
     ],
   },
 ];

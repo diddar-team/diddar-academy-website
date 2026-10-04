@@ -27,7 +27,7 @@ export const waitlistSchema = z.object({
   company: z.string().optional(),
 });
 
-export type WaitlistInput = z.infer<typeof waitlistSchema>;
+type WaitlistInput = z.infer<typeof waitlistSchema>;
 
 export function validateWaitlist(data: WaitlistInput): string | null {
   if (data.kind === 'newsletter') return null;
