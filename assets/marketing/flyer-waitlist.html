@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>diddar flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --primary: #173fea;
+    --primary-dark: #0a2bba;
+    --ink: #0b163f;
+    --accent: #f36b42;
+    --cream: #fcfbf8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background:
+      radial-gradient(700px 500px at 88% 6%, rgba(243, 107, 66, 0.55) 0%, rgba(243, 107, 66, 0) 60%),
+      radial-gradient(900px 700px at 8% 100%, rgba(49, 92, 255, 0.5) 0%, rgba(49, 92, 255, 0) 55%),
+      linear-gradient(165deg, var(--ink) 0%, var(--primary-dark) 45%, var(--primary) 100%);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    padding: 72px 76px 64px;
+  }
+
+  /* header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .brand img { height: 62px; width: auto; display: block; }
+  .brand span {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(4px);
+  }
+  .badge .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: #3ddc97;
+  }
+  .badge span {
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+  }
+
+  /* headline */
+  .headline {
+    margin-top: 84px;
+  }
+  .headline h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 84px;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+  }
+  .headline .accent-wrap {
+    position: relative;
+    display: inline-block;
+    color: var(--accent);
+  }
+  .headline svg.underline {
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    width: 100%;
+    height: 22px;
+  }
+  .sub {
+    margin-top: 34px;
+    max-width: 760px;
+    font-size: 27px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.86);
+    font-weight: 400;
+  }
+
+  /* chips */
+  .chips {
+    margin-top: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .chip .check {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .chip .check svg { width: 11px; height: 11px; }
+  .chip span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .spacer { flex: 1; }
+
+  .tracks-label {
+    margin-top: 56px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .tracks {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .track-pill {
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 19px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* pricing strip */
+  .pricing {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 30px 34px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .pricing .price-block { flex: 1; }
+  .pricing .price-block .label {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .pricing .price-block .value {
+    margin-top: 4px;
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .pricing .price-block .value .strike {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-decoration: line-through;
+    margin-right: 10px;
+  }
+  .pricing .divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(255,255,255,0.2);
+  }
+  .pricing .plan {
+    flex: 1.15;
+  }
+  .pricing .plan .label {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .pricing .plan .value {
+    margin-top: 4px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  /* CTA */
+  .cta-row {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffffff;
+    color: var(--primary-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    padding: 22px 36px;
+    border-radius: 999px;
+  }
+  .cta-btn .arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .url {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #ffffff;
+    letter-spacing: -0.005em;
+  }
+
+  .footnote {
+    margin-top: 24px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.62);
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="header">
+      <div class="brand">
+        <img src="../../public/diddar-mark-light.png" alt="" />
+        <span>diddar</span>
+      </div>
+      <div class="badge">
+        <span class="dot"></span>
+        <span>Cohort 1 forming now</span>
+      </div>
+    </div>
+
+    <div class="headline">
+      <h1>
+        Learn the skill.<br />
+        Then <span class="accent-wrap">change the story.
+          <svg class="underline" viewBox="0 0 300 16" fill="none">
+            <path d="M3 11c48-6 120-8 180-6 40 1 82 4 114 2" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+          </svg>
+        </span>
+      </h1>
+      <p class="sub">
+        diddar is an AI-first, mentor-led tech bootcamp. Build faster with AI,
+        backed by real mentors and real projects.
+      </p>
+    </div>
+
+    <div class="chips">
+      <div class="chip">
+        <span class="check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Real mentors, real feedback</span>
+      </div>
+      <div class="chip">
+        <span class="check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>AI-native curriculum</span>
+      </div>
+      <div class="chip">
+        <span class="check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Project-based tracks</span>
+      </div>
+    </div>
+
+    <div class="tracks-label">Choose your track</div>
+    <div class="tracks">
+      <span class="track-pill">Frontend</span>
+      <span class="track-pill">Backend</span>
+      <span class="track-pill">Fullstack</span>
+      <span class="track-pill">Mobile</span>
+      <span class="track-pill">Product Design</span>
+      <span class="track-pill">Data &amp; Analytics</span>
+      <span class="track-pill">AI for Developers</span>
+      <span class="track-pill">Project Management</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="pricing">
+      <div class="price-block">
+        <div class="label">Early-reserver price</div>
+        <div class="value"><span class="strike">₦40,000</span>₦25,000</div>
+      </div>
+      <div class="divider"></div>
+      <div class="plan">
+        <div class="label">Flexible payment</div>
+        <div class="value">70% upfront · 30% during training</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <div class="cta-btn">
+        Add my name to the list
+        <span class="arrow">&#8594;</span>
+      </div>
+      <div class="url">diddar.com</div>
+    </div>
+    <div class="footnote">Limited seats · Nothing is charged until you accept a place.</div>
+  </div>
+</body>
+</html>

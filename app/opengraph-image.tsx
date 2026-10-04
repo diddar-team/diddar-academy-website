@@ -8,8 +8,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function OpengraphImage() {
-  const mark = await readFile(join(process.cwd(), 'public/diddar-mark.png'));
-  const markSrc = `data:image/png;base64,${mark.toString('base64')}`;
+  const lockup = await readFile(join(process.cwd(), 'public/diddar-lockup.png'));
+  const lockupSrc = `data:image/png;base64,${lockup.toString('base64')}`;
 
   return new ImageResponse(
     (
@@ -25,22 +25,10 @@ export default async function OpengraphImage() {
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
-          <img src={markSrc} height={148} alt="" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <div
-              style={{
-                fontSize: 68,
-                fontWeight: 700,
-                color: '#0B163F',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              {APP_NAME}
-            </div>
-            <div style={{ fontSize: 30, fontWeight: 600, color: '#173FEA' }}>
-              {APP_TAGLINE}
-            </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <img src={lockupSrc} height={200} alt={`${APP_NAME} Academy`} />
+          <div style={{ fontSize: 34, fontWeight: 600, color: '#173FEA' }}>
+            {APP_TAGLINE}
           </div>
         </div>
 
