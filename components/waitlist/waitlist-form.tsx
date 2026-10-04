@@ -132,57 +132,22 @@ export function WaitlistForm({ defaultTrack }: { defaultTrack?: string }) {
           />
         </div>
 
-        <Field
-          label="Which track are you interested in?"
-          hint="Select one — this is what tells us where demand is."
-          error={form.errors.track as string | undefined}
-        >
-          <div className="grid gap-2.5 sm:grid-cols-2">
-            {TRACKS.map((track) => {
-              const active = form.getValues().track === track.slug;
-              return (
-                <button
-                  type="button"
-                  key={track.slug}
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => form.setFieldValue('track', track.slug)}
-                  className="rounded-input border px-4 py-3 text-left transition-colors"
-                  style={
-                    active
-                      ? {
-                          borderColor: 'var(--primary)',
-                          background: 'var(--brand-soft)',
-                        }
-                      : {
-                          borderColor: 'var(--stroke)',
-                          background: 'transparent',
-                        }
-                  }
-                  onMouseEnter={(e) => {
-                    if (!active) (e.currentTarget as HTMLElement).style.borderColor = 'var(--primary)';
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!active) (e.currentTarget as HTMLElement).style.borderColor = 'var(--stroke)';
-                  }}
-                >
-                  <span
-                    className="block font-sans text-sm font-semibold"
-                    style={{ color: 'var(--text)' }}
-                  >
-                    {track.name}
-                  </span>
-                  <span
-                    className="mt-0.5 block font-sans text-xs font-medium"
-                    style={{ color: 'var(--text-light)' }}
-                  >
-                    {track.tagline}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </Field>
+        <Select
+          label={<span style={{ color: 'var(--text)' }}>Which track are you interested in?</span>}
+          description={<span style={{ color: 'var(--text-light)' }}>Select one — this is what tells us where demand is.</span>}
+          placeholder="Choose a track"
+          data={TRACKS.map((t) => ({ value: t.slug, label: t.name }))}
+          {...form.getInputProps('track')}
+          value={form.getValues().track || null}
+          onChange={(v) => form.setFieldValue('track', v ?? '')}
+          styles={{
+            input: {
+              background: 'var(--surface)',
+              borderColor: 'var(--stroke)',
+              color: 'var(--text)',
+            },
+          }}
+        />
 
         <Field
           label="Your current level"
